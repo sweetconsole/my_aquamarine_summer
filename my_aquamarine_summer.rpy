@@ -1,5 +1,5 @@
 
-init 3:
+init 4:
     $ mods["my_aquamarine_summer_start"] = "Моё аквамариновое лето"
 
     $ config.developer = True
