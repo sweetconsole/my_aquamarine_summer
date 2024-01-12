@@ -14,6 +14,11 @@ label my_aquamarine_summer_prologue:
     "Зачем в очередной раз разочаровываться, портить себе нервы? И вроде я не такой страшила, чтобы девушки сторонились, но и на Ален Делона не тяну."
     "Впрочем, я отвлёкся."
 
+    play sound sfx_phone_call
+    show phone disable with dissolve
+    $ renpy.pause(0.5, hard=True)
+    show phone enable with dissolve
+
     "Где-то на середине фильма раздался звонок мобильника. Я взял трубку и услышал:"
 
     voice "Здорово, Перс!"
@@ -39,6 +44,10 @@ label my_aquamarine_summer_prologue:
 
     gl "Отлично, увидимся на месте. Бывай!"
 
+    show phone disable with dissolve
+    $ renpy.pause(0.5, hard=True)
+    hide phone with dissolve
+
     "А правда, что я теряю? Схожу, проветрюсь. Почти семь вечера. "
 
     window hide
@@ -48,10 +57,27 @@ label my_aquamarine_summer_prologue:
     "Я быстро оделся, взял телефон, наушники, зарядку на всякий случай, накинул пальто и вышел из дома."
 
     window hide
-    scene bus_stop with fade
+    show intro_1 with dissolve
+    $ renpy.pause(0.5, hard=True)
+    show intro_2 with dissolve
+    $ renpy.pause(2, hard=True)
+    show intro_3 with dissolve
+    $ renpy.pause(2, hard=True)
+    show intro_4 with dissolve
+    $ renpy.pause(2, hard=True)
+    show intro_5 with dissolve
+    $ renpy.pause(0.5, hard=True)
+    show intro_6 with dissolve
+    $ renpy.pause(2, hard=True)
+    show intro_8 with dissolve
+    play sound sfx_inhale
+    $ renpy.pause(2.5, hard=True)
+    show bus_stop with dissolve
     window show
 
     "Пять минут и я стою на остановке и жду автобус."
+
+    play sound sfx_ikarus_arrive
 
     scene anim intro_9 with dissolve
 
@@ -62,7 +88,12 @@ label my_aquamarine_summer_prologue:
     "Я даже не посмотрел на номер и вошёл в салон, спросил у водителя, доеду ли до нужной остановки, после чего устроился у окна. Ехать полчаса, можно вздремнуть. "
 
     scene bg intro_xx with dissolve
+    play sound sfx_bus_interior_moving
 
     "Я надел наушники, включил музыку и закрыл глаза."
 
     show blink
+
+    stop sound
+
+    jump my_aquamarine_summer_day_1
