@@ -4,7 +4,6 @@ label my_aquamarine_summer_prologue:
     $ prolog_time()
 
     scene prologue_monitor_kino
-
     show unblink
     pause(1.5)
     window show
@@ -78,7 +77,6 @@ label my_aquamarine_summer_prologue:
     "Пять минут и я стою на остановке и жду автобус."
 
     play sound sfx_ikarus_arrive
-
     scene anim intro_9 with dissolve
 
     "И вот подъезжает старый ЛИАЗ и распахивает двери. "
@@ -93,7 +91,6 @@ label my_aquamarine_summer_prologue:
     "Я надел наушники, включил музыку и закрыл глаза."
 
     show blink
-
     stop sound
 
     jump my_aquamarine_summer_day_1
