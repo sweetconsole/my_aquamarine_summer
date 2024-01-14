@@ -3,9 +3,23 @@ init:
     $ path_dir = "mods/my_aquamarine_summer/"
 
     # MUSIC
+    $ black_hill_a_wild_river_to_take_you_home = path_dir + "sounds/music/black_hill_a_wild_river_to_take_you_home.ogg"
+    $ borrtex_we_are_saved = path_dir + "sounds/music/borrtex_we_are_saved.ogg"
+    $ carefree = path_dir + "sounds/music/carefree.ogg"
+    $ catch_the_hedge = path_dir + "sounds/music/catch_the_hedge.ogg"
+    $ everyday = path_dir + "sounds/music/everyday.ogg"
+    $ fogive_me = path_dir + "sounds/music/fogive_me.ogg"
+    $ jay_lounge_breath_of_fresh_air = path_dir + "sounds/music/jay_lounge_breath_of_fresh_air.ogg"
+    $ kiss_you = path_dir + "sounds/music/kiss_you.ogg"
+    $ last_hope = path_dir + "sounds/music/last_hope.ogg"
+    $ lastlight_guitar = path_dir + "sounds/music/lastlight_guitar.ogg"
+    $ laugh_throught_the_universe = path_dir + "sounds/music/laugh_throught_the_universe.ogg"
+    $ lonesome_shepherd = path_dir + "sounds/music/lonesome_shepherd.ogg"
+    $ marvin_kopp_every_day_like_the_last = path_dir + "sounds/music/marvin_kopp_every_day_like_the_last.ogg"
     $ soft_piano_music_senbonzakura = path_dir + "sounds/music/soft_piano_music_senbonzakura.ogg"
 
     # SOUNDS
+    $ sfx_girl_screech = path_dir + "sounds/sfx/sfx_girl_screech.ogg"
     $ sfx_phone_call = path_dir + "sounds/sfx/phone_call.ogg"
     $ sfx_alarm_clock = path_dir + "sounds/sfx/sfx_alarm_clock.ogg"
     $ sfx_creaking_floor = path_dir + "sounds/sfx/sfx_creaking_floor.ogg"
@@ -24,11 +38,16 @@ init:
     image mi_piano_musclub = path_dir + "images/cg/mi_piano_musclub.jpg"
     image prologue_monitor_kino = path_dir + "images/cg/prologue_monitor_kino.jpg"
     image starry_sky = path_dir + "images/cg/starry_sky.jpg"
+    image ul_un_grasshopper = path_dir + "images/cg/ul_un_grasshopper.jpg"
     image winter_balcony = path_dir + "images/cg/winter_balcony.jpg"
 
     # MISC
-    image my_aquamarine_summer_chair = path_dir + "images/misc/chair.png"
-    image my_aquamarine_summer_clock = path_dir + "images/misc/clock.png"
+    image my_aquamarine_summer_chair = ConditionSwitch(
+    "persistent.sprite_time=='sunset'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/misc/my_aquamarine_summer_chair.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/misc/my_aquamarine_summer_chair.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True, im.Composite((900, 1080), (0,0), path_dir + "images/misc/my_aquamarine_summer_chair.png") )
+
+    image my_aquamarine_summer_clock = path_dir + "images/misc/my_aquamarine_summer_clock.png"
     image phone disable = path_dir + "images/misc/phone_disable.png"
     image phone enable = path_dir + "images/misc/phone_enable.png"
 

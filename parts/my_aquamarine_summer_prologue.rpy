@@ -5,6 +5,8 @@ label my_aquamarine_summer_prologue:
 
     scene prologue_monitor_kino
     show unblink
+    play music black_hill_a_wild_river_to_take_you_home loop fadein 2
+    play sound2 sfx_computer_noise loop fadein 2
     pause(1.5)
     window show
 
@@ -14,13 +16,14 @@ label my_aquamarine_summer_prologue:
     "Впрочем, я отвлёкся."
 
     play sound sfx_phone_call
+
+    "Где-то на середине фильма раздался звонок мобильника. Я взял трубку и услышал:"
+
     show phone disable with dissolve
     $ renpy.pause(0.5, hard=True)
     show phone enable with dissolve
 
-    "Где-то на середине фильма раздался звонок мобильника. Я взял трубку и услышал:"
-
-    voice "Здорово, Перс!"
+    gln "Здорово, Перс!"
 
     "Перс. Не в восторге от этого прозвища, впрочем, привык со школы. {w}Звонил мой лучший друг Глеб. Интересно, что ему нужно."
 
@@ -55,7 +58,9 @@ label my_aquamarine_summer_prologue:
 
     "Я быстро оделся, взял телефон, наушники, зарядку на всякий случай, накинул пальто и вышел из дома."
 
+    stop sound2 fadeout 2
     window hide
+    play music borrtex_we_are_saved loop fadein 2
     show intro_1 with dissolve
     $ renpy.pause(0.5, hard=True)
     show intro_2 with dissolve
@@ -86,11 +91,12 @@ label my_aquamarine_summer_prologue:
     "Я даже не посмотрел на номер и вошёл в салон, спросил у водителя, доеду ли до нужной остановки, после чего устроился у окна. Ехать полчаса, можно вздремнуть. "
 
     scene bg intro_xx with dissolve
-    play sound sfx_bus_interior_moving
+    play sound sfx_bus_interior_moving fadein 2
 
     "Я надел наушники, включил музыку и закрыл глаза."
 
+    stop music fadeout 2
+    stop sound fadeout 2
     show blink
-    stop sound
 
     jump my_aquamarine_summer_day_1

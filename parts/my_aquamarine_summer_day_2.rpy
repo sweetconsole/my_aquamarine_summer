@@ -13,7 +13,7 @@ label my_aquamarine_summer_day_2:
 
     scene prolog_1 
     show unblink
-    $ renpy.pause(1, hard=True)
+    $ renpy.pause(1.0, hard=True)
     window show
 
     "Мне снилось, будто бы сейчас лето и я отдыхаю в пионерлагере. А нет, со мной это действительно произошло. Пробудился я от того, что яркие солнечные лучи били в глаза."
@@ -21,17 +21,18 @@ label my_aquamarine_summer_day_2:
     window hide
     $ renpy.pause(1.0, hard=True)
     scene int_house_of_mt_day with dissolve
-    play ambience ambience_int_cabin_day loop fadein 2
-    play sound sfx_alarm_clock
+    play ambience ambience_int_cabin_day loop fadein 2.0
+    play music lonesome_shepherd loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
     "Будильник на столе показывал, что скоро полдень, завтрак благополучно проспал, зато выспался и чувствую себя превосходно."
     
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_house_of_mt_day with dissolve
-    play ambience ambience_camp_center_day loop fadein 2
+    play ambience ambience_camp_center_day loop fadein 2.0
     play sound sfx_open_door_1
     $ renpy.pause(1.0, hard=True)
     window show

@@ -12,7 +12,7 @@ label my_aquamarine_summer_day_1:
     $ day_time()
 
     show bg int_bus
-    play ambience ambience_camp_entrance_day loop fadein 2
+    play music music_list["no_tresspassing"] loop fadein 2.0
     show unblink
     $ renpy.pause(1, hard=True)
     window show
@@ -25,6 +25,7 @@ label my_aquamarine_summer_day_1:
     "Надо бы успокоиться, разобраться в ситуации. Посмотрим, что есть в бардачке. Открываю бардачок и достаю пачку сигарет. В жизни курю очень редко, только когда нервничаю сильно, и это тот случай."
 
     scene ext_camp_entrance_day with dissolve
+    play ambience ambience_camp_entrance_day loop fadein 2.0
 
     "Я вышел из автобуса с трофейными сигаретами, и первое что мне бросилось в глаза- кирпичная ограда, металлические ворота, по бокам которых статуи пионеров, и возвышающаяся над воротами надпись - «пионерлагерь Совёнок»."
     "Становится всё интереснее, и статуи, и ворота выглядят как новые, не потрёпанные временем, как это часто бывало в заброшенных местах, да и не только. В своё время лазил по заброшкам, насмотрелся на эти артефакты ушедшей эпохи. Впрочем обшарпанные статуи я и в одном городском парке видел, не пощадило время скульптуры."
@@ -51,7 +52,9 @@ label my_aquamarine_summer_day_1:
 
     "Выкидываю сигарету и, как оказалось, вовремя. Одновременно с этим слышу, как скрипнули ворота."
 
+    stop music fadeout 2.0
     show sl pioneer smile with dissolve
+    play music marvin_kopp_every_day_like_the_last loop fadein 2.0
 
     "Выходит девушка, красивая, голубоглазая, с длинными светлыми косами, на вид семнадцать, одета в пионерскую форму. И обращается ко мне:"
 
@@ -64,14 +67,15 @@ label my_aquamarine_summer_day_1:
 
     slp "Пионерлагерь Совёнок, конечно же! Ты же знал, куда едешь."
 
+    "Что ж, буду импровизировать."
+
     show sl pioneer normal with dspr
 
-    "Что ж, буду импровизировать."
     me "Родители получили путёвку и сюда отправили, сказали что сюрприз. Даже название лагеря не сообщили. Думал, неужели Артек? И мне бы как-то с родителями связаться, по телефону, письмо написать или телеграмму отправить..."
 
-    slp "Не Артек, но здесь не хуже, поверь. Так, что-то я заболталась с тобой. Тебе надо к вожатой, она всё расскажет и поселит! Смотри, сейчас идёшь прямо-прямо, доходишь до площади, затем налево, дальше будут домики. Там спросишь у кого-нибудь, где домик Ольги Дмитриевны. Хотя его сразу узнаешь, возле него сирень растёт."
+    slp "Не Артек, но здесь не хуже, поверь. Так, что-то я заболталась с тобой. Тебе надо к вожатой, она всё расскажет и поселит! {w}Смотри, сейчас идёшь прямо-прямо, доходишь до площади, затем налево, дальше будут домики. Там спросишь у кого-нибудь, где домик Ольги Дмитриевны. {w}Хотя его сразу узнаешь, возле него сирень растёт."
 
-    me "Спасибо за помощь, эээ..."
+    me "Спасибо за помощь{w}, эээ..."
 
     slp "Ой, я же так и не представилась!"
     "Опомнилась девушка."
@@ -100,7 +104,9 @@ label my_aquamarine_summer_day_1:
 
     sl "Ладно, мне пора, надо за младшим отрядом присмотреть."
 
+    stop music fadeout 2.0
     scene ext_bus with dissolve
+    play music music_list["smooth_machine"] loop fadein 2.0
 
     "Она помахала рукой и скрылась за воротами. Я оглянулся, автобус стоит. Снова захожу в салон, хотелось бы узнать, в какое время попал. Что-то я даже календаря не вижу. Покидаю салон и направляюсь к воротам лагеря. Ну что, Совёнок, встречай гостей, точнее гостя."
 
@@ -112,6 +118,9 @@ label my_aquamarine_summer_day_1:
 
     "И тут из здания вышла девушка в пионерской форме и с волосами фиолетового цвета, убранными в два забавных хвостика. Помнится, пионерами были до четырнадцати лет, а она примерно одного возраста со Славей, да и со мной, учитывая моё загадочное омоложение."
     "Может это другая реальность и здесь история пошла по иному пути? К слову, фиолетоволосая выглядела не хуже Слави. Разве что лицо какое-то грустное, в зелёных глазах отражалась вселенская печаль."
+
+    show un pioneer shy with dspr
+
     "Увидев меня, она замерла, будто бы испугалась. Должно быть, она очень стеснительная, боится незнакомых людей. Надо бы разрядить обстановку, я помахал ей рукой."
 
     window hide
@@ -122,9 +131,10 @@ label my_aquamarine_summer_day_1:
     $ renpy.pause(2.0, hard=True)
     window show
 
-    "Тут из соседних кустов выскочило нечто. Голубоглазая девочка с ярко-красными волосами и в такого же цвета футболке с надписью СССР, выглядит младше Фиалки(как я мысленно окрестил фиолетоволосую), допустим ей тринадцать или четырнадцать лет. Хм, СССР что-то задумала. Она подходит к Фиалке, что-то ей говорит и держит в руке."
+    "Тут из соседних кустов выскочило нечто. Голубоглазая девочка с ярко-красными волосами и в такого же цвета футболке с надписью СССР, выглядит младше Фиалки(как я мысленно окрестил фиолетоволосую), допустим ей тринадцать или четырнадцать лет. Хм{w}, СССР что-то задумала. Она подходит к Фиалке, что-то ей говорит и держит в руке."
 
-    scene d1_grasshopper with dissolve
+    scene ul_un_grasshopper with dissolve
+    play sound sfx_girl_screech
 
     "В этот момент я слышу громкий девичий визг и вижу, что СССР трясёт перед лицом Фиалки кузнечиком или саранчой. Похоже, Фиалка боится насекомых."
 
@@ -145,9 +155,12 @@ label my_aquamarine_summer_day_1:
     
     "Да и Фиалка быстро смылась, что ж, спасибо им за представление, но надо двигаться дальше."
 
+    stop ambience fadeout 2.0
+    stop music fadeout 2.0
     window hide
     scene ext_houses_day with fade
-    play ambience ambience_camp_center_day loop fadein 2 
+    play ambience ambience_camp_center_day loop fadein 2.0
+    play music music_list["sweet_darkness"] loop fadein 2.0
     window show
 
     "Идя дальше по дороге, я вышел к домикам. Небольшие домики, должно быть вмещают двух-трёх человек."
@@ -194,15 +207,19 @@ label my_aquamarine_summer_day_1:
     window show
     
     "А я пошёл в сторону площади, на которой стоял памятник, но вместо стандартного Ленина на меня смотрел некий Генда, как было написано на постаменте. Бородатый, в очках, с взглядом, выражающим презрение."
-    "Это ещё кто такой? Историю я знал хорошо, но такого товарища не помню. Может зарубежный деятель, или местный, или даже он вместо Горбачёва занимает пост генсека? Здесь возможно всё."
+    "Это ещё кто такой? {w}Историю я знал хорошо, но такого товарища не помню. Может зарубежный деятель, или местный, или даже он вместо Горбачёва занимает пост генсека? Здесь возможно всё."
     "Так, я на площади. И я забыл, куда дальше идти. Ладно, поверну направо."
     
+    stop ambience fadeout 2.0
     window hide
     scene ext_path2_day with dissolve
     play ambience ambience_forest_day loop fadein 0.5
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(1.0, hard=True)
+    stop music fadeout 2.0
+    $ renpy.pause(1.0, hard=True)
     scene ext_boathouse_day with dissolve
-    play ambience ambience_boat_station_day loop fadein 2
+    play ambience ambience_boat_station_day loop fadein 2.0
+    play music jay_lounge_breath_of_fresh_air loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -245,25 +262,26 @@ label my_aquamarine_summer_day_1:
 
     me "Нелегко с малышнёй возиться? Ты говорила, что за младшим отрядом приглядываешь, прямо как вожатая."
 
-    sl "У меня два младших брата и сестрёнка. Семья большая, умею управляться с детьми. А вообще ты прав, я здесь вроде помощницы вожатой. Если что-то нужно- обращайся, помогу."
+    sl "У меня два младших брата и сестрёнка. Семья большая, умею управляться с детьми. {w}А вообще ты прав, я здесь вроде помощницы вожатой. Если что-то нужно - обращайся, помогу."
 
     me "Спасибо, конечно. А кстати, ты давно здесь?"
 
     sl "Я тут каждое лето бываю, жалко что ты так поздно приехал, столько интересного упустил."
 
-    me "Семейные обстоятельства были. Но ничего, наверстаю. А вообще мне здесь начинает нравиться. Надеюсь хорошо отдохну."
+    me "Семейные обстоятельства были. Но ничего, наверстаю. А вообще мне здесь начинает нравиться. {w}Надеюсь хорошо отдохну."
 
     sl "Мне нравится твой настрой. Думаю ты быстро тут освоишься."
 
     me "Не сомневаюсь."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_square_day 
     show sl pioneer normal at right
     show us sport smile at left
     with fade
-    play ambience ambience_camp_center_day loop fadein 2
+    play ambience ambience_camp_center_day loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -281,9 +299,8 @@ label my_aquamarine_summer_day_1:
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_house_of_mt_day 
-    show sl pioneer normal at left
+    show sl pioneer normal at center
     with fade
-    play ambience ambience_camp_center_day loop fadein 2
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -301,7 +318,7 @@ label my_aquamarine_summer_day_1:
     play sound sfx_open_dooor_campus_1
 
     show us sport grin at right
-    show un pioneer normal at center
+    show un pioneer normal at left
     with dissolve
 
     "Вскоре дверь распахнулась и оттуда выбежала хитро улыбающаяся Ульяна. За ней вышла и Фиалка."
@@ -328,11 +345,15 @@ label my_aquamarine_summer_day_1:
 
     sl "Увидимся ещё."
 
+    stop ambience fadeout 2.0
+    stop music fadeout 2.0
     window hide
     scene int_house_of_mt_day
     show mt pioneer normal
     with fade
-    play ambience ambience_int_cabin_day loop fadein 2
+    play ambience ambience_int_cabin_day loop fadein 2.0
+    play music music_list["take_me_beautifully"] loop fadein 2.0
+    play sound sfx_open_dooor_campus_1
     window show
 
     "Домик довольно уютный, хотя порядок оставлял желать лучшего. К примеру на спинке кровати лифчик валяется, на столе апельсиновые корки, разбросаны шмотки и т.д. И это домик вожатой?"
@@ -397,7 +418,7 @@ label my_aquamarine_summer_day_1:
     me "А можно мне переодеться во что-нибудь подходящее? Жарко уже в этом пальто."
 
     mt "Конечно."
-    "Ответила вожатая и протянула комплект пионерской формы и пакет. Рубашка, галстук, шорты, сандалии. Мда, ну и видок у меня будет, когда я в это наряжусь. В пакете же лежали мыльно-рыльные принадлежности."
+    "Ответила вожатая и протянула комплект пионерской формы и пакет. Рубашка, галстук, шорты, сандалии. {w}Мда, ну и видок у меня будет, когда я в это наряжусь. В пакете же лежали мыльно-рыльные принадлежности."
 
     me "Спасибо, Ольга Дмитриевна. Кстати, что вы имели в виду, когда говорили что я поздно приехал?"
 
@@ -430,18 +451,22 @@ label my_aquamarine_summer_day_1:
 
     "Когда Ольга Дмитриевна вышла, я переоделся в пионерскую форму. Провозился, конечно, с этим галстуком, но потом повязал его на руку."
 
+    stop music fadeout 1.0
     window hide
     $ my_aquamarine_summer_timeskip()
     $ renpy.pause(0.5, hard=True)
     scene int_house_of_mt_day with dissolve
+    play music carefree loop fadein 2.0
     window show
     
     "Полежав на кровати пятнадцать минут, поглядел на плакат с Фантомасом у стены. Да, жуткая рожа. Такого ночью увидишь- испугаешься. А он меня каждое утро будет встречать."
     "Впрочем, чего я разлёгся, надо бы прогуляться, подышать свежим воздухом. С такими мыслями я вышел из домика, закрыл дверь на ключ и направился в сторону площади."
 
+    stop ambience fadeout 2.0
     window hide
     scene ext_house_of_mt_day with dissolve
     play ambience ambience_camp_center_day loop fadein 1.0
+    play sound sfx_open_dooor_campus_1
     $ renpy.pause(1.5, hard=True)
     scene ext_houses_day with dissolve
     $ renpy.pause(0.5, hard=True)
@@ -483,7 +508,7 @@ label my_aquamarine_summer_day_1:
 
     show un pioneer normal at cleft with dissolve
 
-    "На одной из скамеек сидела Лена и читала книжку. Она вздрогнула, когда Эл окликнул её."
+    "На одной из скамеек сидела Лена и читала книжку. Она вздрогнула, когда Электроник окликнул её."
 
     un "Привет..."
 
@@ -491,12 +516,14 @@ label my_aquamarine_summer_day_1:
 
     me "Привет, мы уже виделись, когда я только приехал."
 
+    show un pioneer shy with dspr
+
     un "Да..."
     "Ответила Лена, ненадолго оторвавшись от книжки. Она посмотрела на меня, затем опять вернулась к чтению. Что ж, не будем ей мешать. Да и не только в этом дело."
 
     hide un with dissolve
 
-    "С таким гидом как Эл задержаться на площади не удалось. Мало того, что вогнал несчастную в краску, так ещё и в ускоренном темпе меня повёл куда-то. Я хотя бы успел название книжки разглядеть- Унесённые Ветром."
+    "С таким гидом как Электроник задержаться на площади не удалось. Мало того, что вогнал несчастную в краску, так ещё и в ускоренном темпе меня повёл куда-то. Я хотя бы успел название книжки разглядеть- Унесённые Ветром."
 
     window hide
     $ renpy.pause(1.0, hard=True)
@@ -520,13 +547,14 @@ label my_aquamarine_summer_day_1:
 
     show el pioneer serious with dspr
 
-    el "Это Алиса Двачевская. Ты с ней поосторожнее. Никогда не называй её ДваЧе, она этого не любит."
+    el "Это Алиса Двачевская. Ты с ней поосторожнее. {w}Никогда не называй её ДваЧе, она этого не любит."
     
     show el pioneer normal with dspr
 
     me "Я только хотел спросить, в чём дело, но Алиса опередила меня, похоже у неё очень хороший слух."
 
-    show dv pioneer2 angry far with dspr
+    show dv pioneer2 rage far with dspr
+    play music catch_the_hedge loop fadein 2.0
 
     dv "Что ты сказал? Как ты меня назвал?"
     "И побежала в нашу сторону. Древнее зло пробудилось."
@@ -548,6 +576,7 @@ label my_aquamarine_summer_day_1:
     "Тут же среагировал я."
 
     show dv pioneer2 normal with dspr
+    play music everyday loop fadein 2.0
 
     "Алиса на удивление успокоилась, и сказала:"
 
@@ -558,18 +587,20 @@ label my_aquamarine_summer_day_1:
 
     "Здорово, я остался без проводника, впрочем, что он мне показал, кроме столовой и площади с её достопримечательностями Гендой и Леной? До ужина я решил прогуляться по лагерю, самому разведать территорию."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_musclub_day with fade
-    play ambience ambience_music_club_day loop fadein 2
+    play ambience ambience_music_club_day loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
     "В итоге я вышел к деревянной одноэтажной постройке, за которой простирался лес. Интересно, что здесь находится? Я подхожу к двери, аккуратно открываю."
     
+    stop music fadeout 2.0
     scene int_musclub_day with dissolve
-    stop ambience fadeout 2
-    play music soft_piano_music_senbonzakura loop fadein 2
+    stop ambience fadeout 2.0
+    play music soft_piano_music_senbonzakura loop fadein 2.0
     
     "А тут довольно уютно, на одной стене висят портреты композиторов, на другой доска, на которой нарисованы ноты. На книжных полках пособия по игре на инструментах. Судя по всему, это музыкальный кружок."
     "В самом кружке разнообразие музыкальных инструментов: барабаны, гитары разных типов, скрипка, духовые, рояль. И за роялем сидит девушка и играет."
@@ -579,12 +610,14 @@ label my_aquamarine_summer_day_1:
     "Я замер у входа, не желая отвлекать её от игры, а играет она прекрасно, чего уж говорить, она сама просто красавица. Девушка была с необычной даже для этого места внешностью: длинные, чуть ли не до пола волосы аквамаринового цвета, собранные в два хвостика, большие циановые глаза, которые она иногда закрывала, словно погружаясь в музыку."
     "То, что я слушал, я не знаю как это описать, но это было чудесно."
 
+    stop ambience fadeout 2.0
+    stop music fadeout 2.0
     window hide
     scene int_musclub_day 
     show mi pioneer normal
     with dissolve
-    stop music fadeout 2
-    play ambience ambience_music_club_day loop fadein 2
+    play ambience ambience_music_club_day loop fadein 2.0
+    play music fogive_me loop fadein 2.0
     window show
 
     "Вскоре аквамариновая красавица завершила игру и посмотрела на меня. Я по-прежнему стоял у входа и даже не шелохнулся. Наконец взял себя в руки и зааплодировал:"
@@ -602,22 +635,25 @@ label my_aquamarine_summer_day_1:
 
     me "С начала композиции. Прости, не хотел отвлекать, ты так классно играла. А повторишь эту композицию? Она прекрасна!"
 
+    show mi pioneer smile with dspr
+
     mip "Конечно, только передохну немного. Кстати, кто ты? Я тебя раньше здесь не видела, точнее не здесь, а вообще в лагере. Ты новенький, который должен приехать на днях? Ольга Дмитриевна-сан говорила что к нам приедет новичок. Кстати, как тебя зовут?"
-    "Затараторила она."
     "Как быстро она говорит, может это от волнения?"
 
     me "Я Семён, меня ещё Персом кличут из-за фамилии Персунов. А приехал сегодня, долго добирался сюда."
 
-    show mi pioneer smile with dspr
+    show mi pioneer grin with dspr
 
     mi "Здорово! В смысле что ты приехал, жалко, что две недели прошло. Кстати, меня Мику зовут, честно-честно! Никто не верит, но меня правда так зовут. Просто у меня мама из Японии, а папа советский инженер!"
     "Произнесла она с гордостью. Да, в то время инженеры были на вес золота."
 
-    show mi pioneer normal with dspr
+    show mi pioneer upset with dspr
 
     mi "Он с ней познакомился, когда строил там плотину, или электростанцию, ну, то есть не строил, проектировал."
 
     "Ясно, значит она наполовину японка, вот почему девушка так быстро говорит, хотя и про волнение забывать не стоит. Тем временем Мику продолжала:"
+
+    show mi pioneer normal with dspr
 
     mi "Кстати, здесь находится музыкальный кружок, я его заведующая. Не желаешь вступить в кружок? Я тебя всему научу! Я на всех инструментах с детства умею играть, честно-честно!"
     mi "Вступай и нас будет двое, а то я тут одна сижу, иногда Алиса заходит, берёт гитару, но вступать отказывается, играет где-то вдалеке от клуба. "
@@ -627,7 +663,8 @@ label my_aquamarine_summer_day_1:
 
     "И тут я вспомнил, как несколько лет назад купил гитару. Был порыв, было желание научиться играть. Но не прошло и двух месяцев, как она стала собирать пыль в моей комнате. И так у меня во всём, за многое брался, но потом бросал."
     "Чем я только не планировал заниматься, но быстро остывал. Не хватало терпения, усидчивости, или чего ещё. Но мне говорили что у меня хороший слух, чтобы я не бросал музыку."
-    "Может мне дан шанс всё исправить? Надеюсь, старые навыки не пропали, а если что, то у меня есть прекрасный учитель, впрочем до её уровня мне как до луны пешком, тем не менее, есть к чему стремиться."
+    "Может мне дан шанс всё исправить?"
+    "Надеюсь, старые навыки не пропали, а если что, то у меня есть прекрасный учитель, впрочем до её уровня мне как до луны пешком, тем не менее, есть к чему стремиться."
     "Впрочем, надо бы дать ответ Мику, а то она притихла как-то. Смотрит на меня, ждёт, не отвлекает от размышлений."
 
     me "Почему бы и нет, я на гитаре учился играть когда-то давно, только подзабыл малость. {w}Где можно расписаться?"
@@ -644,10 +681,13 @@ label my_aquamarine_summer_day_1:
     "Сколько радости от моего ответа, нелегко ей одной. И пока Мику не было, я осмотрел кружок. Мне здесь определённо нравится. Наконец девушка вышла из кладовки с тетрадью и ручкой:"
 
     show mi pioneer normal with dissolve
+    play music music_list["went_fishing_caught_a_girl"] loop fadein 2.0
 
     mi "Вот, напиши имя и фамилию и поставь подпись здесь."
 
     me "Когда можно приходить?"
+
+    show mi pioneer sad with dspr
 
     mi "В любое время, я тут всё время одна сижу, иногда Алиса заходит за гитарой..."
 
@@ -660,7 +700,11 @@ label my_aquamarine_summer_day_1:
 
     "Да, она определённо талант. Жаль только, что другие не ценят этого. Наконец, завершив композицию, девушка встала и подошла ко мне:"
 
+    show mi pioneer smile with dspr
+
     mi "Сенечка, ты говорил, что играл на гитаре. Покажешь, чему научился?"
+
+    show mi pioneer normal with dspr
 
     "Сенечка. Никто так меня не называл, но мне нравится."
 
@@ -673,8 +717,9 @@ label my_aquamarine_summer_day_1:
 
     show mi pioneer normal with dspr
 
-    me "Я взял в руки акустику, исполнил пару аккордов. Давно я не играл, но что-то ещё помню. Тут Мику сказала:"
-
+    me "Я взял в руки акустику, исполнил пару аккордов. Давно я не играл, но что-то ещё помню."
+    
+    "Тут Мику сказала:"
     mi "Ты не так зажимаешь, давай я поправлю немного, чтобы звучало лучше."
 
     hide mi with dissolve
@@ -695,6 +740,7 @@ label my_aquamarine_summer_day_1:
 
     window hide
     $ renpy.pause(0.5, hard=True)
+    stop music fadeout 2.0
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
     scene int_musclub_sunset 
@@ -733,18 +779,21 @@ label my_aquamarine_summer_day_1:
 
     me "До встречи, Мику."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(0.5, hard=True)
     scene ext_musclub_sunset with dissolve
-    play ambience ambience_camp_center_evening loop fadein 2
+    play ambience ambience_camp_center_evening loop fadein 2.0
     $ renpy.pause(0.5, hard=True)
     window show
 
     "Я направился в сторону столовой."
 
+    stop music fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_dining_hall_away_sunset with fade 
+    play music music_list["two_glasses_of_melancholy"] loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
     
@@ -778,6 +827,7 @@ label my_aquamarine_summer_day_1:
 
     mt "Семён, а ты чего стоишь? Проходи."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene int_dining_hall_people_sunset with dissolve
@@ -874,7 +924,7 @@ label my_aquamarine_summer_day_1:
     $ renpy.pause(0.5, hard=True)
     window show 
     
-    "Ульяна тем временем побежала к выходу. Гнаться за ней я не стал, а смысл? Ужин испорчен."
+    "Ульяна тем временем побежала к выходу. Гнаться за ней я не стал{w}, а смысл? Ужин испорчен."
     "Тем временем раздался голос Лены:"
 
     un "Сходи на раздачу, может у них ещё осталось."
@@ -892,7 +942,7 @@ label my_aquamarine_summer_day_1:
     me "У меня друг так и не пришёл на ужин, может у вас хоть что-нибудь осталось?"
     "Обратился я к поварихе."
 
-    hide ck
+    hide ck with dissolve
 
     "Она ушла с раздачи на кухню."
     
@@ -900,10 +950,13 @@ label my_aquamarine_summer_day_1:
 
     "Через пару минут она вернулась с двумя треугольниками кефира и булками. Поблагодарив повариху, я отправился в кружок."
 
+    stop ambience fadeout 2.0
+    stop music fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene int_musclub_sunset with fade
-    play ambience ambience_music_club_day loop fadein 2
+    play ambience ambience_music_club_day loop fadein 2.0
+    play music kiss_you loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -936,6 +989,8 @@ label my_aquamarine_summer_day_1:
     "После ужина мы разговорились. Оказалось, Мику задержалась в кружке, потому что хотела исправить мелодию на доске. То, что Микуська играла при нашей первой встрече, она сочинила сама. Потом хотела изменить финал для лучшего звучания. Да так и засиделась, что задремала прямо за роялем."
     "Я попросил её не переутомляться и уж тем более не пропускать ужин, иначе откуда силы возьмутся."
 
+    stop ambience fadeout 2.0
+    stop music fadeout 2.0
     window hide
     hide mi with dissolve
     $ renpy.pause(1.0, hard=True)
@@ -944,7 +999,8 @@ label my_aquamarine_summer_day_1:
     scene ext_musclub_night 
     show mi pioneer normal
     with fade
-    play ambience ambience_camp_center_night loop fadein 2
+    play ambience ambience_camp_center_night loop fadein 2.0
+    play music last_hope loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -972,6 +1028,8 @@ label my_aquamarine_summer_day_1:
 
     me "Хорошая книга."
 
+    show un pioneer smile with dspr
+
     un "Да."
 
     mi "Мы домой идём, не засиживайся тут допоздна."
@@ -993,6 +1051,8 @@ label my_aquamarine_summer_day_1:
     all "Лена!"
     "Опять мы с Мику воскликнули. От стеснения Лены не осталось и следа. Умеет она подкалывать, хотя, может она просто радуется за нас, точнее за подругу."
 
+    show mi pioneer shy with dspr
+
     un "Ладно, Мику, больше ничего не говорю. Но если что, могу переночевать в другом месте. Всё, молчу."
 
     show un pioneer normal with dspr
@@ -1007,6 +1067,8 @@ label my_aquamarine_summer_day_1:
 
     me "Мне не трудно. Тебе спасибо, что расшевелила меня, помогла вспомнить, чему я учился. Я многое упустил в своей жизни..."
 
+    show mi pioneer normal with dspr
+
     mi "Не будем о грустном, главное то, что сейчас происходит. До завтра, Сенечка."
     "Сказала Мику и обняла меня. Так мы стояли несколько минут. Мне не хотелось отпускать её, будто бы боялся, что она исчезнет, стоит лишь ослабить объятия."
 
@@ -1016,21 +1078,24 @@ label my_aquamarine_summer_day_1:
 
     "Ответил я. Она помахала мне рукой и зашла в домик. Я же отправился к себе."
 
+    stop music fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene ext_house_of_mt_night with fade
+    play music lastlight_guitar loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
     "В окнах горел свет. Ольга Дмитриевна уже на месте."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene int_house_of_mt_night
     show mt pioneer normal
     with dissolve
     play sound sfx_open_door_1
-    play ambience ambience_int_cabin_night loop fadein 2
+    play ambience ambience_int_cabin_night loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -1055,24 +1120,26 @@ label my_aquamarine_summer_day_1:
 
     mt "Обращайся, если что. А теперь спать, время близится к отбою. И ты не мог бы выйти?"
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene starry_sky with dissolve
     play sound sfx_open_door_1
-    play ambience ambience_camp_center_night loop fadein 2
+    play ambience ambience_camp_center_night loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
     "Я покинул домик и, пока вожатая переодевалась, наблюдал за звёздами. В отличие от моего города, здесь они хорошо видны в небе. {w}Красота."
     "Вскоре я услышал, что могу зайти обратно."
 
+    stop ambience fadeout 2.0
     window hide
     $ renpy.pause(1.0, hard=True)
     scene int_house_of_mt_night with dissolve
-    $ renpy.pause(0.5, hard=True)
-    scene int_house_of_mt_night2 with dissolve
     play sound sfx_open_door_1
-    play ambience ambience_int_cabin_night loop fadein 2
+    $ renpy.pause(0.5, hard=True)
+    scene int_house_of_mt_night2 with dissolve   
+    play ambience ambience_int_cabin_night loop fadein 2.0
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -1084,13 +1151,17 @@ label my_aquamarine_summer_day_1:
     "Ответила вожатая."
 
     "Но я не сразу заснул. Сначала подкрался к своему пальто, проверил наушники, телефон поставил наконец на энергосберегающий режим. Хоть я и захватил зарядку с собой, но посчитал, что лучше беречь запас батареи. Светить техникой из будущего не стоит особо, да и не буду при вожатой заряжать. Вернувшись в кровать, я задумался."
+
+    play music laugh_throught_the_universe loop fadein 2.0
+
     "Началось всё со звонка лучшего друга. Сел в автобус, задремал - и я уже в другом времени и месте. Перед глазами пронеслись события прошедшего дня - встреча со Славей, сцена у клубов, знакомство с Алисой, блуждание по территории лагеря, и, наконец, встреча с Мику."
     "Эта аквамариновая девушка разожгла погасший в моём сердце огонь. Да и сама такая же как я, только скрывается за образом неугомонной и говорливой пионерки. Встретились два одиночества, что называется. Думаю, теперь нам обоим будет лучше."
     "Не знаю, кто меня сюда закинул, или что, но спасибо ему."
     "С такими мыслями я наконец заснул."
 
     show blink
-
+    stop music fadeout 2.0
+    stop ambience fadeout 2.0
     $ renpy.pause(1.0, hard=True)
 
     jump my_aquamarine_summer_day_2
