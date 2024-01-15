@@ -2,7 +2,7 @@
 init:
     $ path_dir = "mods/my_aquamarine_summer/"
 
-    # MUSIC
+    # msuic
     $ black_hill_a_wild_river_to_take_you_home = path_dir + "sounds/music/black_hill_a_wild_river_to_take_you_home.ogg"
     $ borrtex_we_are_saved = path_dir + "sounds/music/borrtex_we_are_saved.ogg"
     $ carefree = path_dir + "sounds/music/carefree.ogg"
@@ -18,13 +18,13 @@ init:
     $ marvin_kopp_every_day_like_the_last = path_dir + "sounds/music/marvin_kopp_every_day_like_the_last.ogg"
     $ soft_piano_music_senbonzakura = path_dir + "sounds/music/soft_piano_music_senbonzakura.ogg"
 
-    # SOUNDS
+    # sounds
     $ sfx_girl_screech = path_dir + "sounds/sfx/sfx_girl_screech.ogg"
     $ sfx_phone_call = path_dir + "sounds/sfx/phone_call.ogg"
     $ sfx_alarm_clock = path_dir + "sounds/sfx/sfx_alarm_clock.ogg"
     $ sfx_creaking_floor = path_dir + "sounds/sfx/sfx_creaking_floor.ogg"
 
-    # BG
+    # bg
     image ext_house_of_un_night = path_dir + "images/bg/ext_house_of_un_night.jpg"
     image ext_musclub_night = path_dir + "images/bg/ext_musclub_night.jpg"
     image ext_musclub_sunset = path_dir + "images/bg/ext_musclub_sunset.jpg"
@@ -32,8 +32,9 @@ init:
     image int_dining_hall_people_sunset = path_dir + "images/bg/int_dining_hall_people_sunset.jpg"
     image int_musclub_sunset = path_dir + "images/bg/int_musclub_sunset.jpg"
 
-    # CG
+    # cg
     image d1_food_without_cutlets = path_dir + "images/cg/d1_food_without_cutlets.jpg"
+    image library_mz_sleep = path_dir + "images/cg/library_mz_sleep.jpg"
     image me_mi_guitar_musclub = path_dir + "images/cg/me_mi_guitar_musclub.jpg"
     image mi_piano_musclub = path_dir + "images/cg/mi_piano_musclub.jpg"
     image prologue_monitor_kino = path_dir + "images/cg/prologue_monitor_kino.jpg"
@@ -41,7 +42,7 @@ init:
     image ul_un_grasshopper = path_dir + "images/cg/ul_un_grasshopper.jpg"
     image winter_balcony = path_dir + "images/cg/winter_balcony.jpg"
 
-    # MISC
+    # misc
     image my_aquamarine_summer_chair = ConditionSwitch(
     "persistent.sprite_time=='sunset'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/misc/my_aquamarine_summer_chair.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/misc/my_aquamarine_summer_chair.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -59,7 +60,7 @@ init:
     image my_aquamarine_summer_backdrop_day_6 = path_dir + "images/days/my_aquamarine_summer_backdrop_day_6.jpg"
     image my_aquamarine_summer_backdrop_day_7 = path_dir + "images/days/my_aquamarine_summer_backdrop_day_7.jpg"
 
-    # CHAIRS
+    # chairs
     image my_aquamarine_summer_chair_left:
         "my_aquamarine_summer_chair"
         left
@@ -75,7 +76,7 @@ init:
         right
         yalign 0.0
 
-    # Cook
+    # cook
     image ck normal = ConditionSwitch(
     "persistent.sprite_time=='sunset'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/ck/ck_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/ck/ck_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -85,4 +86,11 @@ init:
     "persistent.sprite_time=='sunset'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/ck/ck_sad.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/ck/ck_sad.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True, im.Composite((900, 1080), (0,0), path_dir + "images/sprites/ck/ck_sad.png") )
+
+    # mt Sport
+    image mt sport normal = ConditionSwitch(
+    "persistent.sprite_time=='sunset'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/mt/mt_sport_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'", im.MatrixColor( im.Composite((900, 1080), (0,0), path_dir + "images/sprites/mt/mt_sport_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True, im.Composite((900, 1080), (0,0), path_dir + "images/sprites/mt/mt_sport_normal.png") )
+
 

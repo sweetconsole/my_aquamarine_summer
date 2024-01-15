@@ -1,11 +1,8 @@
 
 label my_aquamarine_summer_day_1:
     window hide
-
     $ renpy.pause(1.0, hard=True)
-
     $ new_chapter(1, u"Моё аквамариновое лето.\nДень первый")
-
     scene my_aquamarine_summer_backdrop_day_1 with fade
     $ renpy.pause(1.5, hard=True)
     $ persistent.sprite_time = "day"
