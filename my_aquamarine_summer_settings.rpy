@@ -31,6 +31,10 @@ init:
     image int_dining_hall_distribution_table_sunset = im.MatrixColor( im.Composite((1920, 1080), (0,0), path_dir + "images/bg/int_dining_hall_distribution_table_sunset.jpg"), im.matrix.tint(0.94, 0.82, 1.0) )
     image int_dining_hall_people_sunset = path_dir + "images/bg/int_dining_hall_people_sunset.jpg"
     image int_musclub_sunset = path_dir + "images/bg/int_musclub_sunset.jpg"
+    image int_music_club_mattresses_day = path_dir + "images/bg/int_music_club_mattresses_day.jpg"
+    image int_music_club_mattresses_night_lights_on = path_dir + "images/bg/int_music_club_mattresses_night_lights_on.jpg"
+    image int_music_club_mattresses_night = path_dir + "images/bg/int_music_club_mattresses_night.jpg"
+    image int_music_club_mattresses_sunset = path_dir + "images/bg/int_music_club_mattresses_sunset.jpg"
 
     # cg
     image d1_food_without_cutlets = path_dir + "images/cg/d1_food_without_cutlets.jpg"
