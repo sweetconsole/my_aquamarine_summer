@@ -1,10 +1,9 @@
 
 label my_aquamarine_summer_day_1:
     window hide
-    $ renpy.pause(1.0, hard=True)
-    $ new_chapter(1, u"Моё аквамариновое лето.\nДень первый")
     scene my_aquamarine_summer_backdrop_day_1 with fade
     $ renpy.pause(1.5, hard=True)
+    $ new_chapter(2, u"Моё аквамариновое лето.\nДень первый")
     $ persistent.sprite_time = "day"
     $ day_time()
 
@@ -1155,8 +1154,9 @@ label my_aquamarine_summer_day_1:
     "Не знаю, кто меня сюда закинул, или что, но спасибо ему."
     "С такими мыслями я наконец заснул."
 
-    show blink
     stop music fadeout 2.0
     stop ambience fadeout 2.0
+    show blink
+    window hide
     $ renpy.pause(1.0, hard=True)
     jump my_aquamarine_summer_day_2

@@ -1,10 +1,8 @@
 
 label my_aquamarine_summer_day_2:
-    window hide
-    $ renpy.pause(1.0, hard=True)
-    $ new_chapter(2, u"Моё аквамариновое лето.\nДень второй")
     scene my_aquamarine_summer_backdrop_day_2 with fade
     $ renpy.pause(1.5, hard=True)
+    $ new_chapter(2, u"Моё аквамариновое лето.\nДень второй")
     $ persistent.sprite_time = "day"
     $ day_time()
 
@@ -1251,8 +1249,9 @@ label my_aquamarine_summer_day_2:
 
     "Не хотелось её одну оставлять в кружке, поэтому я убрал столовые приборы, выключил свет, прилёг рядом с Мику, устроился поудобнее и закрыл глаза. Только я успел пожелать Микуське спокойной ночи, как тут же отправился в царство Морфея."
 
-    show blink
     stop music fadeout 2.0
     stop ambience fadeout 2.0
+    window hide
+    show blink
     $ renpy.pause(1.0, hard=True)
     jump my_aquamarine_summer_day_3

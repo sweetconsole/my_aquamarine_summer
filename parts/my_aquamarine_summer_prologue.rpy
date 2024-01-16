@@ -5,8 +5,8 @@ label my_aquamarine_summer_prologue:
 
     scene prologue_monitor_kino
     show unblink
-    play music black_hill_a_wild_river_to_take_you_home loop fadein 2
-    play sound2 sfx_computer_noise loop fadein 2
+    play music black_hill_a_wild_river_to_take_you_home loop fadein 2.0
+    play sound2 sfx_computer_noise loop fadein 2.0
     pause(1.5)
     window show
 
@@ -58,21 +58,21 @@ label my_aquamarine_summer_prologue:
 
     "Я быстро оделся, взял телефон, наушники, зарядку на всякий случай, накинул пальто и вышел из дома."
 
-    stop sound2 fadeout 2
+    stop sound2 fadeout 2.0
     window hide
-    play music borrtex_we_are_saved loop fadein 2
+    play music borrtex_we_are_saved loop fadein 2.0
     show intro_1 with dissolve
     $ renpy.pause(0.5, hard=True)
     show intro_2 with dissolve
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.0, hard=True)
     show intro_3 with dissolve
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.0, hard=True)
     show intro_4 with dissolve
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.0, hard=True)
     show intro_5 with dissolve
     $ renpy.pause(0.5, hard=True)
     show intro_6 with dissolve
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.0, hard=True)
     show intro_8 with dissolve
     play sound sfx_inhale
     $ renpy.pause(2.5, hard=True)
@@ -91,12 +91,13 @@ label my_aquamarine_summer_prologue:
     "Я даже не посмотрел на номер и вошёл в салон, спросил у водителя, доеду ли до нужной остановки, после чего устроился у окна. Ехать полчаса, можно вздремнуть. "
 
     scene bg intro_xx with dissolve
-    play sound sfx_bus_interior_moving fadein 2
+    play sound sfx_bus_interior_moving fadein 2.0
 
     "Я надел наушники, включил музыку и закрыл глаза."
 
-    stop music fadeout 2
-    stop sound fadeout 2
+    stop music fadeout 2.0
+    stop sound fadeout 2.0
+    window hide
     show blink
 
     jump my_aquamarine_summer_day_1
